@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="assets/images/security.png">
+
+    <title>Attestation Certificate Authority</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/dashboard.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Attestation Certificate Authority</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-9 col-md-8 col-md-offset-2 main">
+          <h4 class="page-header">Attestation Identity CA Policy Options</h4>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                  <th>#</th>
+                  <th>Certificate Name</th>
+                  <th>Upload Certificate</th>
+                  <th>Action</th>
+                </tr>
+                
+                    <tr>
+                  <th>1</th>
+                  <th>Platform Credential</th>
+                  <th><form action="/aga.html" method="POST" id="myForm" onsubmit="changeActionURL()">
+         <input type="radio" name="ns_license" id="ns_license" value="1" />Enabled<br />
+         <input type="radio" name="ns_license" id="ns_license" value="0" />Disabled</th>
+         <th><input type="submit" class="btn btn-primary" formaction="/aga.html" />    
+</form>
+
+<script type="text/javascript">
+function changeActionURL() {
+    var forma = document.getElementById('myForm');
+    forma.action += "?action=add&actiondata0=" + getRadioValue('ns_license');
+}
+
+function getRadioValue(name){
+    var rads = document.getElementsByName('ns_license');
+    for(var x=0; x<rads.length;x++){
+        if(rads[x].checked){
+            //tm:=rads[x].value;
+            return rads[x].value;
+          //  fmt.println("html:")
+       
+        }
+    }
+}
+</script>
+
+
+                </tr>
+                <tr>
+                <th>#</th>
+                  <th><a></a>IMA eventlog Validation</th>
+                  <th><a id="ima1"></a></th>
+                  <th><a ><form action="/aga.html" method="POST" id="myForma" onsubmit="changeActionURLA()">
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Edit</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+       
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+                <INPUT TYPE="radio" name="selection" id="VA" value="1" onClick="if(this.checked){check(VA)}" />Endosement credentials will be validated.
+          <br>
+          <INPUT TYPE="radio" name="selection" id="VA" value="0" onClick="if(this.checked){check(VA)}" />Endosement credentials will not be validated.
+ <script>
+function check() {
+  var x  = document.getElementById("VA").checked;
+  document.getElementById("ima1").innerHTML = x;
+}
+</script>  
+        </div>
+        <div class="modal-footer">
+          <button type="button" onclick="check()" class="btn btn-primary" data-dismiss="modal">Close</button>
+          <button type="submit" onclick="check()" class="btn btn-primary" data-dismiss="modal" formaction="/aga.html" >Submit</button>
+        </div>
+      </div>
+    </div>
+  </div></form>
+ <script type="text/javascript">
+function changeActionURLA() {
+    var forma = document.getElementById('myForma');
+    forma.action += "?action=add&actiondata0=" + getRadioValue('selection');
+} 
+  function getRadioValue1(name){
+    var rads = document.getElementsByName('selection');
+    for(var x=0; x<rads.length;x++){
+        if(rads[x].checked){
+            //tm:=rads[x].value;
+            return rads[x].value;
+          //  fmt.println("html:")
+       
+        }
+    }
+}
+</script>
+</a>  </th>
+                </tr>
+                <tr>
+             
+                <tr>
+                  <th></th>
+             
+                </tr>
+            
+               
+              
+                </tr>
+              </thead>
+             
+            </table>
+          </div>
+        </div>
+      
+      </div>
+     
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="assets/js/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

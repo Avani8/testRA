@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="assets/images/security.png">
+
+    <title>Attestation Certificate Authority</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/dashboard.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+     <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="assets/images/hirs46.png"></a>
+          <a class="navbar-brand" href="index.html">Attestation Certificate Authority</a>
+          <a class="navbar-brand" href="attdevices.html">Enrolled Devices</a>
+          <a class="navbar-brand" href="policy.html">Policy</a>
+          <a class="navbar-brand" href="againresq.html">Policy Status</a>
+          <a class="navbar-brand" href="platcert.html">Platcert</a>
+          <a class="navbar-brand" href="endocert.html">Endocert</a>
+          <a class="navbar-brand" href="attrcert.html">Attributecert</a>
+          <a class="navbar-brand" href="eventlog.html">Eventlogs</a>
+          <a class="navbar-brand" href="imalogs.html">Imalogs</a>
+          <a class="navbar-brand" href="report.html">Validation Report</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-9 col-md-8 col-md-offset-2 main">
+          <h4 class="page-header">Attestation Identity Policy Options</h4>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                  <th>#</th>
+                  <th>Document Name</th>
+                  <th>Hostname</th>
+                  <th>Check</th>
+                  <th>Action</th>
+                </tr>
+                
+                    <tr>
+                  <th>1</th>
+                  <th>Platform Credential Validation
+                </th>
+                  <th><form action="/policy.html" method="POST" id="myForm" onsubmit="changeActionURL()"> <select name="actioning" size="1" id="action-choice">
+                  {{range .AllCerts}}
+  <option name="plat_cert" >{{.Certname}}</option>
+  {{end}}
+</select>  </th>
+                  
+                  <th>
+         <input type="radio" name="ns_license" id="enable" value="1" />Enable<br />
+         <input type="radio" name="ns_license" id="disable" value="0" />Disable</th>
+         <th><input type="submit" class="btn btn-primary" formaction="/policy.html" />    
+</form>
+
+<script type="text/javascript">
+function changeActionURL() {
+
+    var button1 = document.getElementById('enable');
+
+//if (button1.checked){
+    alert(button1.checked? "Platform credential check enabled":"Platform credential check disabled");
+    var forma = document.getElementById('myForm');
+    forma.action += "?action=add&actiondata0=" + getRadioValue('ns_license');
+}
+
+function getRadioValue(name){
+    var rads = document.getElementsByName('ns_license');
+    for(var x=0; x<rads.length;x++){
+        if(rads[x].checked){
+            //tm:=rads[x].value;
+            return rads[x].value;
+          //  fmt.println("html:")
+       
+        }
+    }
+}
+</script>
+
+
+
+                </tr>
+                 <tr>
+                  <th>2</th>
+                   <th>Endosement Credential Validation</th>
+                  <th><form action="/policy.html" method="POST" id="myForm" onsubmit="changeActionURL2()"> <select name="actioning" size="1" id="action-choice">
+                  {{range .AllCerts}}
+  <option action="/policy.html" method="POST" name="name_cert" >{{.Certname}}</option>
+  {{end}}
+</select> </th>
+                 
+         <th>
+         <input type="radio" name="ns_license" id="Endienable" value="1" />Enable<br />
+         <input type="radio" name="ns_license" id="disable" value="0" />Disable</th>
+         <th><input type="submit" class="btn btn-primary" formaction="/policy.html" />    
+</form>
+
+<script type="text/javascript">
+function changeActionURL2() {
+    var buttonnew = document.getElementById('Endienable');
+
+//if (button1.checked){
+    alert(buttonnew.checked? "Endorsement credential check enabled":"Endorsement credential check disabled");
+//}
+    var forma = document.getElementById('myForm');
+    forma.action += "?action=add&actiondata0=" + getRadioValue('ns_license');
+}
+
+function getRadioValue(name){
+    var rads = document.getElementsByName('ns_license');
+    for(var x=0; x<rads.length;x++){
+        if(rads[x].checked){
+            //tm:=rads[x].value;
+            return rads[x].value;
+          //  fmt.println("html:")
+       
+        }
+    }
+}
+</script>
+
+
+
+                </tr>
+                <tr>
+                  <th>3</th>
+                   <th>Platform Attributes Credential Validation</th>
+                  <th><form action="/policy.html" method="POST" id="myForm" onsubmit="changeActionURL3()"> <select name="actioning" size="1" id="action-choice">
+                  {{range .AllCerts}}
+  <option action="/policy.html" method="POST" name="name_cert" >{{.Certname}}</option>
+  {{end}}
+</select> </th>
+                 
+                  <th>
+         <input type="radio" name="ns_license" id="attenable" value="1" />Enable<br />
+         <input type="radio" name="ns_license" id="disable" value="0" />Disable</th>
+         <th><input type="submit" class="btn btn-primary" formaction="/policy.html" />    
+</form>
+
+<script type="text/javascript">
+function changeActionURL3() {
+    var buttonnew = document.getElementById('attenable');
+
+//if (button1.checked){
+    alert(buttonnew.checked? "Attestation attributes check enabled":"Attestation attributes check disabled");
+//}
+    var forma = document.getElementById('myForm');
+    forma.action += "?action=add&actiondata0=" + getRadioValue('ns_license');
+}
+
+function getRadioValue(name){
+    var rads = document.getElementsByName('ns_license');
+    for(var x=0; x<rads.length;x++){
+        if(rads[x].checked){
+            //tm:=rads[x].value;
+            return rads[x].value;
+          //  fmt.println("html:")
+       
+        }
+    }
+}
+</script>
+
+
+
+                </tr>
+                <tr>
+                  <th>4</th>
+                  <th>CEL Firmware Eventlogs Validation</th>
+                  <th><form action="/policy.html" method="POST" id="myForm" onsubmit="changeActionURL4()"> <select name="actioning" size="1" id="action-choice">
+                  {{range .AllCerts}}
+  <option action="/policy.html" method="POST" name="name_cert" >{{.Certname}}</option>
+  {{end}}
+</select> </th>
+                  
+                  <th>
+         <input type="radio" name="ns_license" id="celenable" value="1" />Enable<br />
+         <input type="radio" name="ns_license" id="disable" value="0" />Disable</th>
+         <th><input type="submit" class="btn btn-primary" formaction="/policy.html" />    
+</form>
+
+<script type="text/javascript">
+function changeActionURL4() {
+    var buttonnew = document.getElementById('celenable');
+
+//if (button1.checked){
+    alert(buttonnew.checked? "CEL event logs check enabled":"CEL event logs check disabled");
+//}
+    var forma = document.getElementById('myForm');
+    forma.action += "?action=add&actiondata0=" + getRadioValue('ns_license');
+}
+
+function getRadioValue(name){
+    var rads = document.getElementsByName('ns_license');
+    for(var x=0; x<rads.length;x++){
+        if(rads[x].checked){
+            //tm:=rads[x].value;
+            return rads[x].value;
+          //  fmt.println("html:")
+       
+        }
+    }
+}
+</script>
+
+
+
+                </tr>
+                <tr>
+                  <th>5</th>
+                   <th>CEL IMA eventlogs validation</th>
+                  <th><form action="/policy.html" method="POST" id="myForm" onsubmit="changeActionURL5()"> <select name="actioning" size="1" id="action-choice">
+                  {{range .AllCerts}}
+  <option action="/policy.html" method="POST" name="name_cert" >{{.Certname}}</option>
+  {{end}}
+</select> </th>
+                 
+                  <th>
+         <input type="radio" name="ns_license" id="imaenable" value="1" />Enable<br />
+         <input type="radio" name="ns_license" id="disable" value="0" />Disable</th>
+         <th><input type="submit" class="btn btn-primary" formaction="/policy.html" />    
+</form>
+
+<script type="text/javascript">
+function changeActionURL5() {
+    var buttonnew = document.getElementById('imaenable');
+
+//if (button1.checked){
+    alert(buttonnew.checked? "CEL IMA logs check enabled":"CEL IMA logs check disabled");
+//}
+    var forma = document.getElementById('myForm');
+    forma.action += "?action=add&actiondata0=" + getRadioValue('ns_license');
+}
+
+function getRadioValue(name){
+    var rads = document.getElementsByName('ns_license');
+    for(var x=0; x<rads.length;x++){
+        if(rads[x].checked){
+            //tm:=rads[x].value;
+            return rads[x].value;
+          //  fmt.println("html:")
+       
+        }
+    }
+}
+</script>
+
+                </tr>
+               
+            </table>
+                 
+          </div>
+        </div>
+      
+      </div>
+     
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="assets/js/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

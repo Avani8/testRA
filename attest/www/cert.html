@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="assets/images/security.png">
+
+    <title>Attestation Certificate Authority</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/dashboard.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Attestation Certificate Authority</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-9 col-md-8 col-md-offset-2 main">
+          <h4 class="page-header">Attestation Identity CA Policy Options</h4>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                  <th>#</th>
+                  <th>Certificate Name</th>
+                  <th>Validation Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                  <td>1</td>
+                  <td><a></a>Platform Credential Validation</td>
+                  <td><a></a>Disable</td>
+                  <td><a type="submit" class="btn btn-primary">Edit</a> 
+                </tr>
+                 <tr>
+                  <td>2</td>
+                  <td><a></a>Platform Attributes Credential Validation</td>
+                  <td><a></a>Disable</td>
+                  <td><a type="submit" class="btn btn-primary">Edit</a> 
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td><a></a>Endosement Credential Validation</td>
+                  <td><a></a>Disable</td>
+                  <td><a type="submit" class="btn btn-primary">Edit</a> 
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td><a></a>Firmware Eventlog Validation</td>
+                  <td><a></a>Disable</td>
+                  <td><a type="submit" class="btn btn-primary">Edit</a> 
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td><a></a>IMA eventlog Validation</td>
+                  <td><a></a>Disable</td>
+                  <td><a type="submit" class="btn btn-primary">Edit</a> 
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <form enctype="multipart/form-data" action="/upload" method="post">
+                 <input type="file" name="uploadfile" />
+                 <input type="hidden" name="token" value="{{.}}"/>
+                 <button type="submit" class="btn btn-primary">cancel</button>
+                 <button type="submit" class="btn btn-primary">save</button>
+                 <input type="submit" value="upload" />
+                 
+
+            <button type="submit" class="btn btn-primary">Submit1</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="assets/js/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

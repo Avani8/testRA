@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="assets/images/security.png">
+
+    <title>Attestation Certificate Authority</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/dashboard.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Attestation Certificate Authority</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-9 col-md-8 col-md-offset-2 main">
+          <h4 class="page-header">Attestation Identity CA Policy Options</h4>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                  <th>#</th>
+                  <th>Certificate Name</th>
+                  <th>Validation Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                  <td>1</td>
+                  <td><a></a>Platform Credential Validation</td>
+                  <td><a></a>Disable</td>
+                  <td><a type="submit" class="btn btn-primary">Edit</a> 
+                </tr>
+                 <tr>
+                  <td>2</td>
+                  <td><a></a>Platform Attributes Credential Validation</td>
+                  <td><a></a>Disable</td>
+                  <td><a type="submit" href="book.html" class="btn btn-primary">Edit</a> 
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td><a></a>Endosement Credential Validation</td>
+                  <td><a id="demo"></a></td>
+                  <td><a type="submit" class="btn btn-primary">Edit</a> 
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td><a></a>Firmware Eventlog Validation</td>
+                   
+                  <td> <a id="event1"></a></td>
+                  
+                  <td><a> <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#myModal1">Edit</button>
+<form  action="process" method="post" enctype="multipart/form-data">
+  <!-- Modal -->
+  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+       
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+        
+        <input type="radio"  name="selection1" value="true" id="VA1" >Firmware credentials will be validated
+          <br>
+          <input type="radio"  name="selection1" value="false" id="VA1"  >Firmware credentials will not be validated
+        
+   
+        </div>
+        <div class="modal-footer1">
+          <button type="button" onclick="check1()" class="btn btn-primary" data-dismiss="modal">Close</button>
+         
+          <input type="submit"  class="btn btn-primary" value="Save" data-dismiss="modal">Save</button> 
+           
+        </div>
+      </div>
+    </div>
+  </div> </form>
+</a>             </td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td><a></a>IMA eventlog Validation</td>
+                  <td><a id="ima1"></a></td>
+                  <td><a >
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Edit</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+       
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+                <INPUT TYPE="radio" name="selection" id="VA" onClick="if(this.checked){check(VA)}" >Endosement credentials will be validated.
+          <br>
+          <INPUT TYPE="radio" name="selection" id="VA" onClick="if(this.checked){check(VA)}" >Endosement credentials will not be validated.
+ <script>
+function check() {
+  var x  = document.getElementById("VA").checked;
+  document.getElementById("ima1").innerHTML = x;
+}
+</script>  
+        </div>
+        <div class="modal-footer">
+          <button type="button" onclick="check()" class="btn btn-primary" data-dismiss="modal">Close</button>
+          <button type="button" onclick="check()" class="btn btn-primary" data-dismiss="modal">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</a> 
+                </td>
+                </tr>
+              </tbody>
+            </table>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="assets/js/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
